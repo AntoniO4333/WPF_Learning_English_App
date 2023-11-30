@@ -23,6 +23,23 @@ namespace Cheremushkinae_107d2
         public MainWindow()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
+
+        }
+
+        private void SettingsMain_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void SignInMain_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SignUpMain_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
