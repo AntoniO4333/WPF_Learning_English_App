@@ -17,13 +17,14 @@ namespace Cheremushkinae_107d2
 {
     /// <summary>
     /// Логика взаимодействия для LearningWindow.xaml
-    /// </summary>
+    /// </summary> kn.lm,ASDV
     public partial class LearningWindow : Window
     {
         public LearningWindow()
         {
             InitializeComponent();
             Closing += LearningWindow_Closing;
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void BackToMain_Click(object sender, RoutedEventArgs e)
@@ -71,5 +72,9 @@ namespace Cheremushkinae_107d2
             Application.Current.Shutdown();
         }
 
+        private void IKnow_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentEngWord.Content = "This is english word";
+        }
     }
 }

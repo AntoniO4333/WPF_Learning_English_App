@@ -24,6 +24,7 @@ namespace Cheremushkinae_107d2
         {
             InitializeComponent();
             Closing += AddNewWordWindow_Closing;
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void BackToMain_Click(object sender, RoutedEventArgs e)

@@ -7,10 +7,12 @@
         mc:Ignorable="d"
         Title="LearningWindow" Height="675" Width="1200" Background="#0C6C0A" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="BackToMain" Content="Back to main window" HorizontalAlignment="Left" Margin="26,22,0,0" VerticalAlignment="Top" Width="260" Height="60" Click="BackToMain_Click" FontSize="24" Background="#51D046" Foreground="White"/>
-        <Border Background="#FF616161" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="900" Margin="0,109,0,0"/>
-        <Button x:Name="AddNewWordLearning" Content="Add a new word" HorizontalAlignment="Left" Margin="922,540,0,0" VerticalAlignment="Top" Width="240" Height="60" Click="AddNewWordLearning_Click" FontSize="24" Background="#51D046" Foreground="White"/>
+        <Button x:Name="BackToMain" Content="Back to main window" HorizontalAlignment="Left" Margin="29,22,0,0" VerticalAlignment="Top" Width="260" Height="60" Click="BackToMain_Click" FontSize="24" Background="#51D046" Foreground="White"/>
+        <Border Background="#FF616161" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="900" Margin="0,110,0,0"/>
+        <Label x:Name="CurrentEngWord" Content="Label" FontSize="40" Margin="150,40,150,379" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="AddNewWordLearning" Content="Add a new word" HorizontalAlignment="Left" Margin="922,550,0,0" VerticalAlignment="Top" Width="240" Height="60" Click="AddNewWordLearning_Click" FontSize="24" Background="#51D046" Foreground="White"/>
         <Button x:Name="SettingsLearning" Content="Settings" HorizontalAlignment="Left" Margin="982,22,0,0" VerticalAlignment="Top" Width="180" Height="60" Click="SettingsLearning_Click" FontSize="24" Background="#51D046" Foreground="White"/>
-
+        <Button x:Name="IKnow" Content="I know!" HorizontalAlignment="Left" Margin="600,383,0,0" VerticalAlignment="Top" Width="380" Height="140" FontSize="40" Background="#51D046" Foreground="White" Click="IKnow_Click"/>
+        <Button x:Name="IDontKnow" Content="I don't know :(" HorizontalAlignment="Left" Margin="220,383,0,0" VerticalAlignment="Top" Width="380" Height="140" FontSize="40" Background="#51D046" Foreground="White"/>
     </Grid>
 </Window>

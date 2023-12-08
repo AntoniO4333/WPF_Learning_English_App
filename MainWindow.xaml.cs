@@ -26,6 +26,7 @@ namespace Cheremushkinae_107d2
             InitializeComponent();
             Closing += MainWindow_Closing;
             this.ResizeMode = ResizeMode.NoResize;
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
         }
 
