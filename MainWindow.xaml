@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cheremushkinae_107d2"
         mc:Ignorable="d"
-        Title="EDictionary" Height="450" Width="800" Background="#0C6C0A" ResizeMode="NoResize">
+        Title="EDictionary" Height="675" Width="1200" Background="#0C6C0A" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="SettingsMain" Content="Settings" HorizontalAlignment="Left" Margin="652,10,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="SettingsMain_Click" FontSize="16" Background="#51D046" Foreground="White"/>
-        <Button x:Name="SignInMain" Content="Sign in" HorizontalAlignment="Left" Margin="517,10,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="SignInMain_Click" FontSize="16" Background="#51D046" Foreground="White"/>
-        <Button x:Name="SignUpMain" Content="Sign up" HorizontalAlignment="Left" Margin="382,10,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="SignUpMain_Click" FontSize="16" Background="#51D046" Foreground="#FFFFFBFB"/>
-        <Label Content="EDictionary" HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" FontSize="72" Foreground="White"/>
-        <Button x:Name="SignUpMain_Копировать" Content="Start learning" HorizontalAlignment="Left" Margin="183,217,0,0" VerticalAlignment="Top" Width="200" Height="80" Click="SignUpMain_Click" FontSize="24" Background="#51D046" Foreground="#FFFFFBFB"/>
-        <Button x:Name="SignUpMain_Копировать1" Content="Add new word" HorizontalAlignment="Left" Margin="427,217,0,0" VerticalAlignment="Top" Width="200" Height="80" Click="SignUpMain_Click" FontSize="24" Background="#51D046" Foreground="#FFFFFBFB"/>
-        <Label Content="I made this app because my sibscripition on DuoCards is over and I can't extend it " HorizontalAlignment="Center" Margin="0,327,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFFFFEFE"/>
+        <Button x:Name="SettingsMain" Content="Settings" HorizontalAlignment="Left" Margin="989,10,0,0" VerticalAlignment="Top" Width="180" Height="60" Click="SettingsMain_Click" FontSize="24" Background="#51D046" Foreground="White"/>
+        <Button x:Name="SignInMain" Content="Sign in" HorizontalAlignment="Left" Margin="786,10,0,0" VerticalAlignment="Top" Width="180" Height="60" Click="SignInMain_Click" FontSize="24" Background="#51D046" Foreground="White"/>
+        <Button x:Name="SignUpMain" Content="Sign up" HorizontalAlignment="Left" Margin="582,10,0,0" VerticalAlignment="Top" Width="180" Height="60" Click="SignUpMain_Click" FontSize="24" Background="#51D046" Foreground="#FFFFFBFB"/>
+        <Label Content="EDictionary" HorizontalAlignment="Center" Margin="0,147,0,0" VerticalAlignment="Top" FontSize="108" Foreground="White"/>
+        <Button x:Name="StartLearningMain" Content="Start learning" HorizontalAlignment="Left" Margin="222,330,0,0" VerticalAlignment="Top" Width="300" Height="120" Click="StartLearningMain_Click" FontSize="36" Background="#51D046" Foreground="#FFFFFBFB"/>
+        <Button x:Name="AddNewWordMain" Content="Add new word" HorizontalAlignment="Left" Margin="666,330,0,0" VerticalAlignment="Top" Width="300" Height="120" Click="AddNewWordMain_Click" FontSize="36" Background="#51D046" Foreground="#FFFFFBFB"/>
+        <Label Content="I made this app because my sibscripition on DuoCards is over and I can't extend it " HorizontalAlignment="Center" Margin="0,551,0,0" VerticalAlignment="Top" FontSize="30" Foreground="#FFFFFEFE" Width="1134"/>
 
     </Grid>
 </Window>
