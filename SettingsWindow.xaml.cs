@@ -16,15 +16,20 @@ using System.Windows.Shapes;
 namespace Cheremushkinae_107d2
 {
     /// <summary>
-    /// Логика взаимодействия для LearningWindow.xaml
-    /// </summary> kn.lm,ASDV
-    public partial class LearningWindow : Window
+    /// Логика взаимодействия для SettingsWindow.xaml
+    /// </summary>
+    public partial class SettingsWindow : Window
     {
-        public LearningWindow()
+        public SettingsWindow()
         {
             InitializeComponent();
-            Closing += LearningWindow_Closing;
+            Closing += SettingsWindow_Closing;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        }
+
+        private void SettingsWindow_Closing(object sender, CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
         private void BackToMain_Click(object sender, RoutedEventArgs e)
@@ -44,7 +49,24 @@ namespace Cheremushkinae_107d2
             }
         }
 
-        private void AddNewWordLearning_Click(object sender, RoutedEventArgs e)
+        private void LearnngWindow_Click(object sender, RoutedEventArgs e)
+        {
+            LearningWindow learningWindow = Owner as LearningWindow;
+            if (learningWindow != null)
+            {
+                learningWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                learningWindow = new LearningWindow();
+                learningWindow.Owner = this;
+                learningWindow.Show();
+                this.Hide();
+            }
+        }
+
+        private void AddNewWordWindow_Click(object sender, RoutedEventArgs e)
         {
             AddNewWordWindow addNewWordWindow = Owner as AddNewWordWindow;
             if (addNewWordWindow != null)
@@ -59,34 +81,6 @@ namespace Cheremushkinae_107d2
                 addNewWordWindow.Show();
                 this.Hide();
             }
-        }
-
-
-        private void Settings_Click(object sender, RoutedEventArgs e)
-        {
-            SettingsWindow settingsWindow = Owner as SettingsWindow;
-            if (settingsWindow != null)
-            {
-                settingsWindow.Show();
-                this.Hide();
-            }
-            else
-            {
-                settingsWindow = new SettingsWindow();
-                settingsWindow.Owner = this;
-                settingsWindow.Show();
-                this.Hide();
-            }
-        }
-
-        private void LearningWindow_Closing(object sender, CancelEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void IKnow_Click(object sender, RoutedEventArgs e)
-        {
-            CurrentEngWord.Content = "This is english word";
         }
     }
 }

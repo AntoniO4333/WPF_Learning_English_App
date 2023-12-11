@@ -32,7 +32,19 @@ namespace Cheremushkinae_107d2
 
         private void SettingsMain_Click(object sender, RoutedEventArgs e)
         {
-            
+            SettingsWindow settingsWindow = Owner as SettingsWindow;
+            if (settingsWindow != null)
+            {
+                settingsWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                settingsWindow = new SettingsWindow();
+                settingsWindow.Owner = this;
+                settingsWindow.Show();
+                this.Hide();
+            }
         }
 
         private void SignInMain_Click(object sender, RoutedEventArgs e)

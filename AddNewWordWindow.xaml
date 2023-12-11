@@ -8,9 +8,17 @@
         Title="AddNewWordWindow" Height="675" Width="1200" Background="#0C6C0A" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="BackToMain" Content="Back to main window" HorizontalAlignment="Left" Margin="26,22,0,0" VerticalAlignment="Top" Width="260" Height="60" Click="BackToMain_Click" FontSize="24" Background="#51D046" Foreground="White"/>
-        <Border Background="#FF616161" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="900" Margin="0,109,0,0"/>
+        <Border Background="#FF616161" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="900" Margin="0,109,0,0">
+        </Border>
         <Button x:Name="StartLearning" Content="Start learning" HorizontalAlignment="Left" Margin="922,540,0,0" VerticalAlignment="Top" Width="240" Height="60" Click="StartLearning_Click" FontSize="24" Background="#51D046" Foreground="White"/>
         <Button x:Name="SettingsLearning" Content="Settings" HorizontalAlignment="Left" Margin="982,22,0,0" VerticalAlignment="Top" Width="180" Height="60" Click="Settings_Click" FontSize="24" Background="#51D046" Foreground="White"/>
+        <Label Content="Word in English:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="40" Margin="156,120,0,0"/>
+        <Label Content="Word in Russian:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="40" Margin="156,210,0,0"/>
+        <Label Content="Example of using this word:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="40" Margin="156,300,0,0"/>
+        <TextBox HorizontalAlignment="Left" Margin="489,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="517" FontSize="40"/>
+        <TextBox HorizontalAlignment="Left" Margin="489,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="517" FontSize="40"/>
+        <TextBox HorizontalAlignment="Left" Margin="160
+,384,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="850" FontSize="40"/>
 
     </Grid>
 </Window>
