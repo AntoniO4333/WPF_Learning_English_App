@@ -18,13 +18,15 @@ namespace Cheremushkinae_107d2
     /// <summary>
     /// Логика взаимодействия для AddNewWordWindow.xaml
     /// </summary>
+
+
     public partial class AddNewWordWindow : Window
     {
         public AddNewWordWindow()
         {
             InitializeComponent();
             Closing += AddNewWordWindow_Closing;
-            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen; 
         }
 
         private void BackToMain_Click(object sender, RoutedEventArgs e)
