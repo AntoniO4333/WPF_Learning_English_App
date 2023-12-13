@@ -1,0 +1,20 @@
+﻿<Window x:Class="Cheremushkinae_107d2.SignInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cheremushkinae_107d2"
+        mc:Ignorable="d"
+        Title="SignInWindow" Height="525" Width="450" Background="#0C6C0A" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Welcome back!" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" Margin="0,24,0,0"/>
+        <Label Content="Your name:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="30,90,0,0"/>
+        <TextBox x:Name="YourNameTextBox" HorizontalAlignment="Left" Margin="30,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="20" RenderTransformOrigin="0.527,0.351"/>
+        <Label Content="Your password:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="30,190,0,0"/>
+        <TextBox x:Name="YourPasswordTextBox" HorizontalAlignment="Left" Margin="30,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="20"/>
+        <Button x:Name="SignIn" Content="Sign in" HorizontalAlignment="Center" Margin="0,330,0,0" VerticalAlignment="Top" Width="184" Height="60" Click="SignIn_Click" FontSize="24" Background="#51D046" Foreground="White"/>
+        <Label Content="Still don't have an account? " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Margin="84,431,0,0"/>
+        <Button x:Name="GoToSignUpWindow" Content="Sign up" HorizontalAlignment="Left" Margin="284,431,0,0" VerticalAlignment="Top" Width="71" Height="30" Click="GoToSignUpWindow_Click" FontSize="15" Background="#51D046" Foreground="White" RenderTransformOrigin="0.817,0.501"/>
+
+    </Grid>
+</Window>

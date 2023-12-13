@@ -82,5 +82,25 @@ namespace Cheremushkinae_107d2
                 this.Hide();
             }
         }
+
+        private void ShowStatistics_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteAllDictionary_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

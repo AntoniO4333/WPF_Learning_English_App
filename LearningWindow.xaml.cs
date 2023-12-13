@@ -86,7 +86,7 @@ namespace Cheremushkinae_107d2
 
         private void IKnow_Click(object sender, RoutedEventArgs e)
         {
-            CurrentEngWord.Content = "This is english word";
+            CurrentWord.Content = "This is english word";
         }
     }
 }
