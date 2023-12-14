@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cheremushkinae_107d2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
@@ -23,55 +24,12 @@ namespace Cheremushkinae_107d2
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
 
-
-    public class User
-    {
-        public int ID_user { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-
-        public virtual ICollection<LearnDict> LearnDict { get; set; }
-        public virtual ICollection<KnowDict> KnowDict { get; set; }
-    }
-
-    public class LearnDict
-    {
-        public int ID_learning_word { get; set; }
-        public int ID_user { get; set; }
-        public string Word_in_English { get; set; }
-        public string Word_in_Russian { get; set; }
-        public string Using_example { get; set; }
-        public int Right_answers_count { get; set; }
-
-        public virtual User User { get; set; }
-    }
-
-    public class KnowDict
-    {
-        public int ID_known_word { get; set; }
-        public int ID_user { get; set; }
-        public string Word_in_English { get; set; }
-        public string Word_in_Russian { get; set; }
-        public string Using_example { get; set; }
-
-        public virtual User User { get; set; }
-    }
-
-    public class YourDbContext : DbContext
-    {
-        public YourDbContext() : base("YourDbContextConnectionString") { }
-
-        public DbSet<User> Users { get; set; }
-        public DbSet<LearnDict> LearnDicts { get; set; }
-        public DbSet<KnowDict> KnowDicts { get; set; }
-    }
-
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new DataManageVM();
             Closing += MainWindow_Closing;
             this.ResizeMode = ResizeMode.NoResize;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;

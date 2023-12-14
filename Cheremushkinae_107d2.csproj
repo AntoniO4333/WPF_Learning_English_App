@@ -66,9 +66,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\DataWorker.cs" />
-    <Compile Include="Model\KNOW_DICT.cs" />
-    <Compile Include="Model\LEARN_DICT.cs" />
-    <Compile Include="Model\USER.cs" />
+    <Compile Include="Model\Data\ApplicationContext.cs" />
+    <Compile Include="Model\KnowDict.cs" />
+    <Compile Include="Model\LearnDict.cs" />
+    <Compile Include="Model\RelayCommand.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>

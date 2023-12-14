@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cheremushkinae_107d2.ViewModel;
+using Cheremushkinae_107d2.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -23,14 +25,11 @@ namespace Cheremushkinae_107d2
         public SignUpWindow()
         {
             InitializeComponent();
+            DataContext = new DataManageVM();
             Closing += SignUpWindow_Closing;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen; 
         }
 
-        private void SignUp_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void GoToSignInWindow_Click(object sender, RoutedEventArgs e)
         {
@@ -52,6 +51,23 @@ namespace Cheremushkinae_107d2
         private void SignUpWindow_Closing(object sender, CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void SignUp_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Owner as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                mainWindow = new MainWindow();
+                mainWindow.Owner = this;
+                mainWindow.Show();
+                this.Hide();
+            }
         }
     }
 }
