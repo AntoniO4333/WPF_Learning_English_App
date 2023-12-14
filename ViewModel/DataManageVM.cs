@@ -63,6 +63,8 @@ namespace Cheremushkinae_107d2.ViewModel
                     } else
                     {
                         resultStr = DataWorker.CreateUserInDB(PublicUsername, PublicPassword, PublicEmail);
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.UsernameLabel.Content = PublicUsername;
                         MessageBox.Show(resultStr);
                     }
                 }

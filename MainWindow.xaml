@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="EDictionary" Height="675" Width="1200" Background="#0C6C0A" ResizeMode="NoResize">
     <Grid>
-        <Label Name="UsernameLabel" Content="Username" HorizontalAlignment="Left" Margin="355,7,0,0" VerticalAlignment="Top" FontSize="40" Foreground="White"/>
+        <Label Name="UsernameLabel" Content="" HorizontalAlignment="Left" Margin="355,7,0,0" VerticalAlignment="Top" FontSize="40" Foreground="White"/>
         <Button x:Name="SettingsMain" Content="Settings" HorizontalAlignment="Left" Margin="989,10,0,0" VerticalAlignment="Top" Width="180" Height="60" Click="SettingsMain_Click" FontSize="24" Background="#51D046" Foreground="White"/>
         <Button x:Name="SignInMain" Content="Sign in" HorizontalAlignment="Left" Margin="786,10,0,0" VerticalAlignment="Top" Width="180" Height="60" Click="SignInMain_Click" FontSize="24" Background="#51D046" Foreground="White"/>
         <Button x:Name="SignUpMain" Content="Sign up" HorizontalAlignment="Left" Margin="582,10,0,0" VerticalAlignment="Top" Width="180" Height="60" Click="SignUpMain_Click" FontSize="24" Background="#51D046" Foreground="#FFFFFBFB"/>

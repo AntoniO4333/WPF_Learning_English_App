@@ -30,6 +30,7 @@ namespace Cheremushkinae_107d2
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen; 
         }
 
+        
 
         private void GoToSignInWindow_Click(object sender, RoutedEventArgs e)
         {
@@ -56,6 +57,8 @@ namespace Cheremushkinae_107d2
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Owner as MainWindow;
+            DataManageVM dataContext = DataContext as DataManageVM;
+            mainWindow.UsernameLabel.Content = dataContext.PublicUsername;
             if (mainWindow != null)
             {
                 mainWindow.Show();

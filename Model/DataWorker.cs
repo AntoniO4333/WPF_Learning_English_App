@@ -9,12 +9,11 @@ namespace Cheremushkinae_107d2.Model
         // add user
         public static string CreateUserInDB(string username, string password, string email)
         {
-            string result = "Вообще не заходит";
+            string result = "Пользователь уже существует либо произошла непредвиденная ошибка";
             using (ApplicationContext db = new ApplicationContext())
             {
                 // проверяем, существует ли пользователь
                 bool checkIsExist = db.Users.Any(el => el.Username == username);
-                result = "Заходит, но до ифа не доходит";
                 if (!checkIsExist) 
                 {
                     User newUser = new User { Username = username, Password = password, Email = email};
