@@ -28,6 +28,27 @@ namespace Cheremushkinae_107d2.Model
             }
             return result;
         }
+        // sign in 
+        public static string SignInDB(string username, string password)
+        {
+            string result = "Пользователя с таким ником не существует либо введен неверный пароль";
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                // проверяем, существует ли пользователь
+                bool checkIsExist = db.Users.Any(el => el.Username == username);
+                if (checkIsExist)
+                {
+                    User user = db.Users.FirstOrDefault(x => x.Username == username);
+                    if (user.Password == password)
+                    {
+                        GlobalSettings.SavedUserID = user.ID_user;
+                        GlobalSettings.SavedUsername = user.Username;
+                        result = "Вход произведен успешно";
+                    } 
+                }
+            }
+            return result;
+        }
         // add new word
         public static string AddNewWordInDB(string word_in_english, string word_in_russian, string using_example, User user)
         {
