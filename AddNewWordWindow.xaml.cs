@@ -25,6 +25,10 @@ namespace Cheremushkinae_107d2
         public AddNewWordWindow()
         {
             InitializeComponent();
+            if (GlobalSettings.SavedUsername != null)
+            {
+                this.UsernameLabel.Content = GlobalSettings.SavedUsername;
+            }
             Closing += AddNewWordWindow_Closing;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen; 
         }
@@ -86,5 +90,9 @@ namespace Cheremushkinae_107d2
             Application.Current.Shutdown();
         }
 
+        private void AddThisWord_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cheremushkinae_107d2.Model;
+using Cheremushkinae_107d2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -90,7 +92,7 @@ namespace Cheremushkinae_107d2
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void DeleteAllDictionary_Click(object sender, RoutedEventArgs e)
@@ -100,7 +102,20 @@ namespace Cheremushkinae_107d2
 
         private void DeleteAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show(DataWorker.DeleteUserInDB(GlobalSettings.SavedUsername));
+            MainWindow mainWindow = Owner as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                mainWindow = new MainWindow();
+                mainWindow.Owner = this;
+                mainWindow.Show();
+                this.Hide();
+            }
         }
     }
 }

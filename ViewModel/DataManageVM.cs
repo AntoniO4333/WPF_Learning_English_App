@@ -51,10 +51,9 @@ namespace Cheremushkinae_107d2.ViewModel
                 {
                     Window wnd = obj as Window;
                     string resultStr = "";
-                    if (
-                    PublicUsername == null || PublicUsername.Replace(" ", "").Length == 0 ||
-                    PublicPassword == null || PublicPassword.Replace(" ", "").Length == 0 ||
-                    PublicEmail == null || PublicEmail.Replace(" ", "").Length == 0
+                    if ((PublicUsername == null) || (PublicUsername.Replace(" ", string.Empty).Length == 0) ||
+                    (PublicPassword == null) || (PublicPassword.Replace(" ", string.Empty).Length == 0) ||
+                    (PublicEmail == null) || (PublicEmail.Replace(" ", string.Empty).Length == 0)
                     )
                     {
                         SetRedBlockControl(wnd, "YourNameTextBox");
@@ -62,9 +61,8 @@ namespace Cheremushkinae_107d2.ViewModel
                         SetRedBlockControl(wnd, "YourEmailTextBox");
                     } else
                     {
+                        GlobalSettings.SavedUsername = PublicUsername;
                         resultStr = DataWorker.CreateUserInDB(PublicUsername, PublicPassword, PublicEmail);
-                        MainWindow mainWindow = new MainWindow();
-                        mainWindow.UsernameLabel.Content = PublicUsername;
                         MessageBox.Show(resultStr);
                     }
                 }
@@ -73,6 +71,33 @@ namespace Cheremushkinae_107d2.ViewModel
         }
         #endregion
 
+        #region COMMANDS TO DELETE
+        private RelayCommand deleteUser;
+        public RelayCommand DeleteUser
+        {
+            get
+            {
+                return deleteUser ?? new RelayCommand(obj =>
+                {
+                    Window wnd = obj as Window;
+                    string resultStr = "Ti kak v nastroyki bez registratsii zashel?";
+                    if (GlobalSettings.SavedUsername == null)
+                    {
+                        MessageBox.Show(resultStr);
+            }
+                    else
+                    {
+                        MessageBox.Show(GlobalSettings.SavedUsername);
+                        resultStr = DataWorker.DeleteUserInDB(GlobalSettings.SavedUsername);
+                        GlobalSettings.SavedUsername = null;
+                        GlobalSettings.SavedUserID = 0;
+                        MessageBox.Show(resultStr);
+                    }
+                }
+                );
+            }
+        }
+        #endregion
         private void SetRedBlockControl(Window wnd, string blockName)
         {
             Control block = wnd.FindName(blockName) as Control;

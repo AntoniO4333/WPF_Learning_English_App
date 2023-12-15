@@ -19,6 +19,10 @@ namespace Cheremushkinae_107d2.Model
                     User newUser = new User { Username = username, Password = password, Email = email};
                     db.Users.Add(newUser);
                     db.SaveChanges();
+                    // Получаем ID только что созданного пользователя
+                    GlobalSettings.SavedUserID = newUser.ID_user;
+
+
                     result = "Сделано";
                 }
             }
@@ -67,11 +71,12 @@ namespace Cheremushkinae_107d2.Model
             return result;
         }
         // delete user
-        public static string DeleteUserInDB(User user)
+        public static string DeleteUserInDB(string username)
         {
             string result = "Такого пользователя не существует";
             using (ApplicationContext db = new ApplicationContext())
             {
+                User user = db.Users.FirstOrDefault(x => x.Username == username);
                 db.Users.Remove(user);
                 db.SaveChanges();
                 result = "Пользователь с ником " + user.Username + " удален";

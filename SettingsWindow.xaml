@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cheremushkinae_107d2"
         mc:Ignorable="d"
-        Title="SettingsWindow" Height="675" Width="450" Background="#0C6C0A" ResizeMode="NoResize">
+        Title="SettingsWindow" Height="675" Width="450" Background="#0C6C0A" ResizeMode="NoResize" Name="SettingsWnd">
     <Grid>
         <Button x:Name="ShowStatistics" Content="show statistics" HorizontalAlignment="Left" Margin="21,30,0,0" VerticalAlignment="Top" Width="184" Height="60" Click="ShowStatistics_Click" FontSize="24" Background="#51D046" Foreground="White"/>
         <Button x:Name="LogOut" Content="Log out" HorizontalAlignment="Left" Margin="295,30,0,0" VerticalAlignment="Top" Width="120" Height="60" Click="LogOut_Click" FontSize="24" Background="#51D046" Foreground="White"/>
@@ -15,6 +15,6 @@
 
         <Label x:Name="CurrentEngWord" Content="Danger zone:" FontSize="34" Margin="0,400,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFFF0A0A"/>
         <Button x:Name="DeleteAllDictionary" Content="Delete all dictionary" HorizontalAlignment="Center" Margin="0,480,0,0" VerticalAlignment="Top" Width="236" Height="60" Click="DeleteAllDictionary_Click" FontSize="24" Background="#51D046" Foreground="Red"/>
-        <Button x:Name="DeleteAccount" Content="Delete your account" HorizontalAlignment="Center" Margin="0,560,0,0" VerticalAlignment="Top" Width="260" Height="60" Click="DeleteAccount_Click" FontSize="24" Background="#51D046" Foreground="Red"/>
+        <Button x:Name="DeleteAccount" Command="{Binding DeleteUser}" CommandParameter="{Binding ElementName=SettingsWnd}" Content="Delete your account" HorizontalAlignment="Center" Margin="0,560,0,0" VerticalAlignment="Top" Width="260" Height="60" Click="DeleteAccount_Click" FontSize="24" Background="#51D046" Foreground="Red"/>
     </Grid>
 </Window>

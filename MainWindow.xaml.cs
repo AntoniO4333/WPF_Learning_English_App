@@ -30,6 +30,18 @@ namespace Cheremushkinae_107d2
         {
             InitializeComponent();
             DataContext = new DataManageVM();
+            if(GlobalSettings.SavedUsername != null)
+            {
+                this.SignInMain.Visibility = Visibility.Collapsed;
+                this.SignUpMain.Visibility = Visibility.Collapsed;
+                this.UsernameLabel.Visibility = Visibility.Visible;
+                this.UsernameLabel.Content = GlobalSettings.SavedUsername;
+            } else
+            {
+                UsernameLabel.Visibility = Visibility.Collapsed;
+                this.SignInMain.Visibility = Visibility.Visible;
+                this.SignUpMain.Visibility = Visibility.Visible;
+            }
             Closing += MainWindow_Closing;
             this.ResizeMode = ResizeMode.NoResize;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -92,6 +104,7 @@ namespace Cheremushkinae_107d2
             LearningWindow learningWindow = Owner as LearningWindow;
             if (learningWindow != null)
             {
+                learningWindow.UsernameLabel.Content = this.UsernameLabel.Content;
                 learningWindow.Show();
                 this.Hide();
             }

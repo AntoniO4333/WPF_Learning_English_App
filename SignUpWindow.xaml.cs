@@ -56,20 +56,37 @@ namespace Cheremushkinae_107d2
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Owner as MainWindow;
+
             DataManageVM dataContext = DataContext as DataManageVM;
-            mainWindow.UsernameLabel.Content = dataContext.PublicUsername;
-            if (mainWindow != null)
+            if (!((dataContext.PublicUsername == null) || (dataContext.PublicUsername.Replace(" ", string.Empty).Length == 0) ||
+                    (dataContext.PublicPassword == null) || (dataContext.PublicPassword.Replace(" ", string.Empty).Length == 0) ||
+                    (dataContext.PublicEmail == null) || (dataContext.PublicEmail.Replace(" ", string.Empty).Length == 0)
+                    ))
             {
-                mainWindow.Show();
-                this.Hide();
-            }
-            else
-            {
-                mainWindow = new MainWindow();
-                mainWindow.Owner = this;
-                mainWindow.Show();
-                this.Hide();
+                // Убираю кнопки регистрации и входа в аккаунт, показываю ник в MainWindow
+                MainWindow mainWindow = Owner as MainWindow;
+                mainWindow.UsernameLabel.Visibility = Visibility.Visible;
+                mainWindow.UsernameLabel.Content = dataContext.PublicUsername;
+                mainWindow.SignUpMain.Visibility = Visibility.Collapsed;
+                mainWindow.SignInMain.Visibility = Visibility.Collapsed;
+                // показываю ник в AddNewWordWindow
+                AddNewWordWindow addNewWordWindow = new AddNewWordWindow();
+                addNewWordWindow.UsernameLabel.Content = dataContext.PublicUsername;
+                // показываю ник в LearningWindow
+                LearningWindow learningWindow = new LearningWindow();
+                learningWindow.UsernameLabel.Content = dataContext.PublicUsername;
+                if (mainWindow != null)
+                {
+                    mainWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    mainWindow = new MainWindow();
+                    mainWindow.Owner = this;
+                    mainWindow.Show();
+                    this.Hide();
+                }
             }
         }
     }

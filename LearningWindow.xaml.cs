@@ -23,6 +23,10 @@ namespace Cheremushkinae_107d2
         public LearningWindow()
         {
             InitializeComponent();
+            if (GlobalSettings.SavedUsername != null)
+            {
+                this.UsernameLabel.Content = GlobalSettings.SavedUsername;
+            }
             Closing += LearningWindow_Closing;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
