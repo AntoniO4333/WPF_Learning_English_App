@@ -93,7 +93,28 @@ namespace Cheremushkinae_107d2
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
-            
+            GlobalSettings.SavedUsername = null;
+            GlobalSettings.SavedUserID = 0;
+            MainWindow mainWindow = Owner as MainWindow;
+            AddNewWordWindow addNewWordWindow = new AddNewWordWindow();
+            addNewWordWindow.UsernameLabel.Visibility = Visibility.Collapsed;
+            LearningWindow learningWindow = new LearningWindow();
+            learningWindow.UsernameLabel.Visibility = Visibility.Collapsed;
+            if (mainWindow != null)
+            {
+                mainWindow.SignInMain.Visibility = Visibility.Visible;
+                mainWindow.SignUpMain.Visibility = Visibility.Visible;
+                mainWindow.UsernameLabel.Visibility = Visibility.Collapsed;
+                mainWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                mainWindow = new MainWindow();
+                mainWindow.Owner = this;
+                mainWindow.Show();
+                this.Hide();
+            }
         }
 
         private void DeleteAllDictionary_Click(object sender, RoutedEventArgs e)

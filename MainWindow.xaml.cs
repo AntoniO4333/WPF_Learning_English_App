@@ -50,19 +50,27 @@ namespace Cheremushkinae_107d2
 
         private void SettingsMain_Click(object sender, RoutedEventArgs e)
         {
-            SettingsWindow settingsWindow = Owner as SettingsWindow;
-            if (settingsWindow != null)
+            if (GlobalSettings.SavedUsername != null)
             {
-                settingsWindow.Show();
-                this.Hide();
-            }
-            else
+                SettingsWindow settingsWindow = Owner as SettingsWindow;
+                if (settingsWindow != null)
+                {
+                    settingsWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    settingsWindow = new SettingsWindow();
+                    settingsWindow.Owner = this;
+                    settingsWindow.Show();
+                    this.Hide();
+                }
+            } else
             {
-                settingsWindow = new SettingsWindow();
-                settingsWindow.Owner = this;
-                settingsWindow.Show();
-                this.Hide();
+                MessageBox.Show("You need to sign in or sign up to see settings");
+                SignInMain_Click(sender, e);
             }
+            
         }
 
         private void SignInMain_Click(object sender, RoutedEventArgs e)
@@ -101,36 +109,50 @@ namespace Cheremushkinae_107d2
 
         private void StartLearningMain_Click(object sender, RoutedEventArgs e)
         {
-            LearningWindow learningWindow = Owner as LearningWindow;
-            if (learningWindow != null)
+            if (GlobalSettings.SavedUsername != null)
             {
-                learningWindow.UsernameLabel.Content = this.UsernameLabel.Content;
-                learningWindow.Show();
-                this.Hide();
-            }
-            else
+                LearningWindow learningWindow = Owner as LearningWindow;
+                if (learningWindow != null)
+                {
+                    learningWindow.UsernameLabel.Content = this.UsernameLabel.Content;
+                    learningWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    learningWindow = new LearningWindow();
+                    learningWindow.Owner = this;
+                    learningWindow.Show();
+                    this.Hide();
+                }
+            } else
             {
-                learningWindow = new LearningWindow();
-                learningWindow.Owner = this;
-                learningWindow.Show();
-                this.Hide();
+                MessageBox.Show("You need to sign in or sign up to start learning");
+                SignInMain_Click(sender, e);
             }
         }
 
         private void AddNewWordMain_Click(object sender, RoutedEventArgs e)
         {
-            AddNewWordWindow addNewWordWindow = Owner as AddNewWordWindow;
-            if (addNewWordWindow != null)
+            if (GlobalSettings.SavedUsername != null)
             {
-                addNewWordWindow.Show();
-                this.Hide();
-            }
-            else
+                AddNewWordWindow addNewWordWindow = Owner as AddNewWordWindow;
+                if (addNewWordWindow != null)
+                {
+                    addNewWordWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    addNewWordWindow = new AddNewWordWindow();
+                    addNewWordWindow.Owner = this;
+                    addNewWordWindow.Show();
+                    this.Hide();
+                }
+            } else
             {
-                addNewWordWindow = new AddNewWordWindow();
-                addNewWordWindow.Owner = this;
-                addNewWordWindow.Show();
-                this.Hide();
+                MessageBox.Show("You need to sign in or sign up to add new words");
+                SignInMain_Click(sender, e);
             }
         }
 

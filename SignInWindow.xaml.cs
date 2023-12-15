@@ -30,27 +30,34 @@ namespace Cheremushkinae_107d2
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(DataWorker.SignInDB(this.YourNameTextBox.Text, this.YourPasswordTextBox.Text));
-            MainWindow mainWindow = Owner as MainWindow;
-            AddNewWordWindow addNewWordWindow = new AddNewWordWindow();
-            addNewWordWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
-            LearningWindow learningWindow = new LearningWindow();
-            learningWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
-            if (mainWindow != null)
+            if(DataWorker.SignInDB(this.YourNameTextBox.Text, this.YourPasswordTextBox.Text) == "Вход произведен успешно")
             {
-                mainWindow.SignInMain.Visibility = Visibility.Collapsed;
-                mainWindow.SignUpMain.Visibility = Visibility.Collapsed;
-                mainWindow.UsernameLabel.Visibility = Visibility.Visible;
-                mainWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
-                mainWindow.Show();
-                this.Hide();
-            }
-            else
+                MessageBox.Show("Вход произведен успешно");
+                MainWindow mainWindow = Owner as MainWindow;
+                AddNewWordWindow addNewWordWindow = new AddNewWordWindow();
+                addNewWordWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
+                LearningWindow learningWindow = new LearningWindow();
+                learningWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
+                if (mainWindow != null)
+                {
+                    mainWindow.SignInMain.Visibility = Visibility.Collapsed;
+                    mainWindow.SignUpMain.Visibility = Visibility.Collapsed;
+                    mainWindow.UsernameLabel.Visibility = Visibility.Visible;
+                    mainWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
+                    mainWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    mainWindow = new MainWindow();
+                    mainWindow.Owner = this;
+                    mainWindow.Show();
+                    this.Hide();
+                }
+            } else
             {
-                mainWindow = new MainWindow();
-                mainWindow.Owner = this;
-                mainWindow.Show();
-                this.Hide();
+                MessageBox.Show("Пользователя с таким ником не существует либо введен неверный пароль");
+
             }
         }
 

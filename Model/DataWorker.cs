@@ -101,7 +101,8 @@ namespace Cheremushkinae_107d2.Model
                 db.Users.Remove(user);
                 db.SaveChanges();
                 result = "Пользователь с ником " + user.Username + " удален";
-
+                GlobalSettings.SavedUsername = null;
+                GlobalSettings.SavedUserID = 0;
                 
             }
             return result;
