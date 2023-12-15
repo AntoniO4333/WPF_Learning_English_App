@@ -63,20 +63,19 @@ namespace Cheremushkinae_107d2
                     (dataContext.PublicEmail == null) || (dataContext.PublicEmail.Replace(" ", string.Empty).Length == 0)
                     ))
             {
-                // Убираю кнопки регистрации и входа в аккаунт, показываю ник в MainWindow
+                MessageBox.Show(DataWorker.CreateUserInDB(dataContext.PublicUsername, dataContext.PublicPassword, dataContext.PublicEmail));
                 MainWindow mainWindow = Owner as MainWindow;
-                mainWindow.UsernameLabel.Visibility = Visibility.Visible;
-                mainWindow.UsernameLabel.Content = dataContext.PublicUsername;
-                mainWindow.SignUpMain.Visibility = Visibility.Collapsed;
-                mainWindow.SignInMain.Visibility = Visibility.Collapsed;
-                // показываю ник в AddNewWordWindow
+                // на всякий случай, вдруг пользователь захочет удалить аккаунт и создать новый
                 AddNewWordWindow addNewWordWindow = new AddNewWordWindow();
-                addNewWordWindow.UsernameLabel.Content = dataContext.PublicUsername;
-                // показываю ник в LearningWindow
+                addNewWordWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
                 LearningWindow learningWindow = new LearningWindow();
-                learningWindow.UsernameLabel.Content = dataContext.PublicUsername;
+                learningWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
                 if (mainWindow != null)
                 {
+                    mainWindow.SignInMain.Visibility = Visibility.Collapsed;
+                    mainWindow.SignUpMain.Visibility = Visibility.Collapsed;
+                    mainWindow.UsernameLabel.Visibility = Visibility.Visible;
+                    mainWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
                     mainWindow.Show();
                     this.Hide();
                 }

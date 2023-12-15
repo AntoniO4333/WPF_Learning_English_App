@@ -25,6 +25,7 @@ namespace Cheremushkinae_107d2
         public SettingsWindow()
         {
             InitializeComponent();
+
             Closing += SettingsWindow_Closing;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
@@ -106,6 +107,9 @@ namespace Cheremushkinae_107d2
             MainWindow mainWindow = Owner as MainWindow;
             if (mainWindow != null)
             {
+                mainWindow.SignInMain.Visibility = Visibility.Visible;
+                mainWindow.SignUpMain.Visibility = Visibility.Visible;
+                mainWindow.UsernameLabel.Visibility = Visibility.Collapsed;
                 mainWindow.Show();
                 this.Hide();
             }

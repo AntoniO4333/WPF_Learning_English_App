@@ -26,6 +26,9 @@ namespace Cheremushkinae_107d2
             if (GlobalSettings.SavedUsername != null)
             {
                 this.UsernameLabel.Content = GlobalSettings.SavedUsername;
+            } else
+            {
+                MessageBox.Show("Без регистрации сюда невозможно попасть");
             }
             Closing += LearningWindow_Closing;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;

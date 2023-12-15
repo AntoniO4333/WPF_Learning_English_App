@@ -29,6 +29,10 @@ namespace Cheremushkinae_107d2
             {
                 this.UsernameLabel.Content = GlobalSettings.SavedUsername;
             }
+            else
+            {
+                MessageBox.Show("Без регистрации сюда невозможно попасть");
+            }
             Closing += AddNewWordWindow_Closing;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen; 
         }

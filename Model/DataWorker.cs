@@ -21,7 +21,7 @@ namespace Cheremushkinae_107d2.Model
                     db.SaveChanges();
                     // Получаем ID только что созданного пользователя
                     GlobalSettings.SavedUserID = newUser.ID_user;
-
+                    GlobalSettings.SavedUsername = newUser.Username;
 
                     result = "Сделано";
                 }

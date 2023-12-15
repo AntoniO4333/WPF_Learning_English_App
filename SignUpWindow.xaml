@@ -14,7 +14,7 @@
         <TextBox Name="YourPasswordTextBox" HorizontalAlignment="Left" Margin="30,227,0,0" TextWrapping="Wrap" Text="{Binding PublicPassword}" VerticalAlignment="Top" Width="226" FontSize="20"/>
         <Label Content="Your email:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="30,290,0,0"/>
         <TextBox Name="YourEmailTextBox" HorizontalAlignment="Left" Margin="30,327,0,0" TextWrapping="Wrap" Text="{Binding PublicEmail}" VerticalAlignment="Top" Width="226" FontSize="20"/>
-        <Button Name="SignUp" Content="Sign up" HorizontalAlignment="Center" Margin="0,416,0,0" VerticalAlignment="Top" Width="184" Height="60" Command="{Binding AddNewUser}" CommandParameter="{Binding ElementName=SignUpWnd}" FontSize="24" Background="#51D046" Foreground="White" Click="SignUp_Click"/>
+        <Button Name="SignUp" Content="Sign up" HorizontalAlignment="Center" Margin="0,416,0,0" VerticalAlignment="Top" Width="184" Height="60" FontSize="24" Background="#51D046" Foreground="White" Click="SignUp_Click"/>
         <Label Content="Already have an account? " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Margin="84,511,0,0"/>
         <Button Name="GoToSignInWindow" Content="Sign in" HorizontalAlignment="Left" Margin="271,511,0,0" VerticalAlignment="Top" Width="71" Height="30" Click="GoToSignInWindow_Click" FontSize="15" Background="#51D046" Foreground="White"/>
     </Grid>
