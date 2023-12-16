@@ -30,9 +30,9 @@ namespace Cheremushkinae_107d2
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            if(DataWorker.SignInDB(this.YourNameTextBox.Text, this.YourPasswordTextBox.Text) == "Вход произведен успешно")
+            if(DataWorker.SignInDB(this.YourNameTextBox.Text, this.YourPasswordTextBox.Text) == "You have successfully sign in!")
             {
-                MessageBox.Show("Вход произведен успешно");
+                MessageBox.Show("You have successfully sign in!");
                 MainWindow mainWindow = Owner as MainWindow;
                 AddNewWordWindow addNewWordWindow = new AddNewWordWindow();
                 addNewWordWindow.UsernameLabel.Content = GlobalSettings.SavedUsername;
@@ -56,7 +56,7 @@ namespace Cheremushkinae_107d2
                 }
             } else
             {
-                MessageBox.Show("Пользователя с таким ником не существует либо введен неверный пароль");
+                MessageBox.Show("User with this nickname does not exist or the password is entered incorrectly");
 
             }
         }

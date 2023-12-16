@@ -11,5 +11,6 @@ namespace Cheremushkinae_107d2
         public static int SavedUserID { get; set; }
         public static string SavedUsername { get; set; }
 
+
     }
 }

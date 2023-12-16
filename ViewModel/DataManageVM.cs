@@ -14,16 +14,16 @@ namespace Cheremushkinae_107d2.ViewModel
     internal class DataManageVM : INotifyPropertyChanged
     {
         // all learning words
-        private List<LearnDict> allLearnWords = DataWorker.GetAllLearningWords();
-        public List<LearnDict> AllLearnWords
-        {
-            get { return allLearnWords; }
-            set
-            {
-                allLearnWords = value;
-                NotifyPropertyChanged("AllLearnWords");
-            }
-        }
+        // private List<LearnDict> allLearnWords = DataWorker.GetAllLearningWords();
+        //public List<LearnDict> AllLearnWords
+        //{
+        //  get { return allLearnWords; }
+        //    set
+        //    {
+        //        allLearnWords = value;
+        //        NotifyPropertyChanged("AllLearnWords");
+        //    }
+        //}
 
         // all know words
         private List<KnowDict> allKnowWords = DataWorker.GetAllKnowWords();

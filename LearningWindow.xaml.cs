@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cheremushkinae_107d2.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -28,7 +29,19 @@ namespace Cheremushkinae_107d2
                 this.UsernameLabel.Content = GlobalSettings.SavedUsername;
             } 
             Closing += LearningWindow_Closing;
+            Loaded += LearningWindow_Loaded;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        }
+
+
+        private void LearningWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<LearnDict> AllUserLearningWordsDict = DataWorker.GetAllUserLearningWords(GlobalSettings.SavedUserID);
+            if (AllUserLearningWordsDict.Count == 1)
+            {
+                MessageBox.Show("You");
+                AddNewWordLearning_Click(sender, e);
+            }
         }
 
         private void BackToMain_Click(object sender, RoutedEventArgs e)

@@ -15,9 +15,9 @@
         <Label Content="Word in English:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="40" Margin="156,120,0,0"/>
         <Label Content="Word in Russian:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="40" Margin="156,210,0,0"/>
         <Label Content="Example of using this word:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="40" Margin="156,300,0,0"/>
-        <TextBox HorizontalAlignment="Left" Margin="489,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="517" FontSize="40"/>
-        <TextBox HorizontalAlignment="Left" Margin="489,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="517" FontSize="40"/>
-        <TextBox HorizontalAlignment="Left" Margin="160,384,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="850" FontSize="40"/>
+        <TextBox Name="WordInEnglishTextBox" HorizontalAlignment="Left" Margin="489,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="517" FontSize="40"/>
+        <TextBox Name="WordInRussianTextBox" HorizontalAlignment="Left" Margin="489,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="517" FontSize="40"/>
+        <TextBox Name="ExampleTextBox" HorizontalAlignment="Left" Margin="160,384,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="850" FontSize="40"/>
         <Button x:Name="AddNewWord" Content="Add this word" HorizontalAlignment="Center" Margin="0,474,0,0" VerticalAlignment="Top" Width="344" Height="96" Click="AddThisWord_Click" FontSize="40" Background="#51D046" Foreground="White"/>
         <Label Name="UsernameLabel" Content="Username" HorizontalAlignment="Right" Margin="0,19,244,0" VerticalAlignment="Top" FontSize="40" Foreground="White"/>
 

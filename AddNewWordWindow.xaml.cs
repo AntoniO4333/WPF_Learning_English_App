@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cheremushkinae_107d2.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -92,7 +93,16 @@ namespace Cheremushkinae_107d2
 
         private void AddThisWord_Click(object sender, RoutedEventArgs e)
         {
-
+            if ((WordInEnglishTextBox.Text != "") && (WordInRussianTextBox.Text != ""))
+            {
+                MessageBox.Show(DataWorker.AddNewWordInDB(WordInEnglishTextBox.Text, WordInRussianTextBox.Text, ExampleTextBox.Text));
+                WordInEnglishTextBox.Text = "";
+                WordInRussianTextBox.Text = "";
+                ExampleTextBox.Text = "";
+            } else
+            {
+                MessageBox.Show("Enter english word and translation");
+            }
         }
     }
 }
