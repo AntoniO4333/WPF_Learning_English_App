@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cheremushkinae_107d2.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,6 @@ namespace Cheremushkinae_107d2
     {
         public static int SavedUserID { get; set; }
         public static string SavedUsername { get; set; }
-
-
+        public static LearnDict SavedCurrentWord { get; set; }
     }
 }
