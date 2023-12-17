@@ -188,11 +188,11 @@ namespace Cheremushkinae_107d2.Model
             
         }
         // take all known words
-        public static List<KnowDict> GetAllKnowWords()
+        public static List<KnowDict> GetAllKnowWords(int userID)
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-                var result = db.KnowDicts.ToList();
+                var result = db.KnowDicts.Where(x => x.ID_user == userID).ToList();
                 return result;
             }
 

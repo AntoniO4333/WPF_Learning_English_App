@@ -26,7 +26,7 @@ namespace Cheremushkinae_107d2.ViewModel
         //}
 
         // all know words
-        private List<KnowDict> allKnowWords = DataWorker.GetAllKnowWords();
+        private List<KnowDict> allKnowWords = DataWorker.GetAllKnowWords(GlobalSettings.SavedUserID);
         public List<KnowDict> AllKnowWords
         {
             get { return allKnowWords; }

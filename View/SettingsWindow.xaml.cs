@@ -96,7 +96,8 @@ namespace Cheremushkinae_107d2
 
         private void ShowStatistics_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("number of words studied: " + DataWorker.GetAllUserLearningWords(GlobalSettings.SavedUserID).Count + "\n"
+                + "number of words learned: " + DataWorker.GetAllKnowWords(GlobalSettings.SavedUserID).Count);
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
