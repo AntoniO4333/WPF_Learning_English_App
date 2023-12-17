@@ -45,7 +45,6 @@ namespace Cheremushkinae_107d2
             Closing += MainWindow_Closing;
             this.ResizeMode = ResizeMode.NoResize;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
         }
 
         private void SettingsMain_Click(object sender, RoutedEventArgs e)
@@ -111,20 +110,28 @@ namespace Cheremushkinae_107d2
         {
             if (GlobalSettings.SavedUsername != null)
             {
-                LearningWindow learningWindow = Owner as LearningWindow;
-                if (learningWindow != null)
+                if (GlobalSettings.SavedLearnWordsCount != 0)
                 {
-                    learningWindow.UsernameLabel.Content = this.UsernameLabel.Content;
-                    learningWindow.Show();
-                    this.Hide();
-                }
-                else
+                    LearningWindow learningWindow = Owner as LearningWindow;
+                    if (learningWindow != null)
+                    {
+                        learningWindow.UsernameLabel.Content = this.UsernameLabel.Content;
+                        learningWindow.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        learningWindow = new LearningWindow();
+                        learningWindow.Owner = this;
+                        learningWindow.Show();
+                        this.Hide();
+                    }
+                } else
                 {
-                    learningWindow = new LearningWindow();
-                    learningWindow.Owner = this;
-                    learningWindow.Show();
-                    this.Hide();
+                    MessageBox.Show("You have no words in your dictionary. Add some to learn!");
+                    AddNewWordMain_Click(sender, e);
                 }
+                
             } else
             {
                 MessageBox.Show("You need to sign in or sign up to start learning");

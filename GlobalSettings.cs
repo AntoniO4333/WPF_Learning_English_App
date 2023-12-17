@@ -10,6 +10,7 @@ namespace Cheremushkinae_107d2
     public class GlobalSettings
     {
         public static int SavedUserID { get; set; }
+        public static int SavedLearnWordsCount { get; set; }
         public static string SavedUsername { get; set; }
         public static LearnDict SavedCurrentWord { get; set; }
     }

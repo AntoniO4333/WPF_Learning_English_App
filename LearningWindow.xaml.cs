@@ -49,7 +49,7 @@ namespace Cheremushkinae_107d2
             } else
             {
                 ShowTranslate.Visibility = Visibility.Visible;
-                CurrentWord.Visibility = Visibility.Visible;
+                CurrentWord.FontSize = 60;
                 Right.Visibility = Visibility.Collapsed;
                 NotRight.Visibility = Visibility.Collapsed;
                 CurrentTranslateWord.Visibility = Visibility.Collapsed;
@@ -131,13 +131,13 @@ namespace Cheremushkinae_107d2
             Application.Current.Shutdown();
         }
 
-        
 
         private void ShowTranslate_Click(object sender, RoutedEventArgs e)
         {
             ShowTranslate.Visibility = Visibility.Collapsed;
             Right.Visibility = Visibility.Visible;
             NotRight.Visibility = Visibility.Visible;
+            CurrentWord.FontSize = 30;
             CurrentTranslateWord.Visibility = Visibility.Visible;
             ExampleUsingThisWord.Visibility = Visibility.Visible;
             MotivationPhrase.Content = "You were right?";
@@ -158,6 +158,18 @@ namespace Cheremushkinae_107d2
             DataWorker.UpdateLearningWordInDB(learnDict.Word_in_English, learnDict.Word_in_Russian, learnDict.Using_example, 0);
             GlobalSettings.SavedCurrentWord = null;
             LearningProcess(sender, e);
+        }
+
+        private void DeleteWordButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Вы уверены?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            List<LearnDict> AllUserLearningWordsDict = DataWorker.GetAllUserLearningWords(GlobalSettings.SavedUserID);
+            if (result == MessageBoxResult.Yes)
+            {
+                MessageBox.Show(DataWorker.DeleteLearningWordInDB(GlobalSettings.SavedCurrentWord.Word_in_English));
+                LearningProcess(sender, e);
+            }
+            
         }
     }
 }

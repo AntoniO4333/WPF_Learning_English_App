@@ -53,18 +53,25 @@ namespace Cheremushkinae_107d2
 
         private void StartLearning_Click(object sender, RoutedEventArgs e)
         {
-            LearningWindow learningWindow = Owner as LearningWindow;
-            if (learningWindow != null)
+            if (GlobalSettings.SavedLearnWordsCount != 0)
             {
-                learningWindow.Show();
-                this.Hide();
+                LearningWindow learningWindow = Owner as LearningWindow;
+                if (learningWindow != null)
+                {
+                    learningWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    learningWindow = new LearningWindow();
+                    learningWindow.Owner = this;
+                    learningWindow.Show();
+                    this.Hide();
+                }
             }
             else
             {
-                learningWindow = new LearningWindow();
-                learningWindow.Owner = this;
-                learningWindow.Show();
-                this.Hide();
+                MessageBox.Show("You have no words in your dictionary. Add some to learn!");
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using Cheremushkinae_107d2.Model.Data;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Cheremushkinae_107d2.Model
@@ -22,7 +23,7 @@ namespace Cheremushkinae_107d2.Model
                     // Получаем ID только что созданного пользователя
                     GlobalSettings.SavedUserID = newUser.ID_user;
                     GlobalSettings.SavedUsername = newUser.Username;
-
+                    GlobalSettings.SavedLearnWordsCount = 0;
                     result = "You have successfully registered!";
                 }
             }
@@ -43,6 +44,7 @@ namespace Cheremushkinae_107d2.Model
                     {
                         GlobalSettings.SavedUserID = user.ID_user;
                         GlobalSettings.SavedUsername = user.Username;
+                        GlobalSettings.SavedLearnWordsCount = GetAllUserLearningWords(user.ID_user).Count;
                         result = "You have successfully sign in!";
                     } 
                 }
@@ -68,6 +70,7 @@ namespace Cheremushkinae_107d2.Model
                         Right_answers_count = 0 };
                     db.LearnDicts.Add(newLearnDict);
                     db.SaveChanges();
+                    GlobalSettings.SavedLearnWordsCount += 1;
                     result = "You have successfully added a new word";
                 }
             }
@@ -120,6 +123,7 @@ namespace Cheremushkinae_107d2.Model
                     Using_example = using_example
                 };
                 db.LearnDicts.Remove(learnDict);
+                GlobalSettings.SavedLearnWordsCount -= 1;
                 db.KnowDicts.Add(newKnowDict);
                 db.SaveChanges();
 
@@ -138,21 +142,25 @@ namespace Cheremushkinae_107d2.Model
                 result = "Пользователь с ником " + user.Username + " удален";
                 GlobalSettings.SavedUsername = null;
                 GlobalSettings.SavedUserID = 0;
-                
+                GlobalSettings.SavedLearnWordsCount = 0;
+
             }
             return result;
         }
         // delete word in learning
-        public static string DeleteLearningWordInDB(LearnDict learnDict)
+        public static string DeleteLearningWordInDB(string word_in_eng)
         {
             string result = "Такого слова вы не добавляли";
             using (ApplicationContext db = new ApplicationContext())
             {
+                User user = db.Users.FirstOrDefault(x => x.Username == GlobalSettings.SavedUsername);
+                LearnDict learnDict = db.LearnDicts.FirstOrDefault(l => l.Word_in_English == word_in_eng);
                 db.LearnDicts.Remove(learnDict);
                 db.SaveChanges();
                 result = "cлово " + learnDict.Word_in_English + " удалено";
  
             }
+            GlobalSettings.SavedLearnWordsCount -= 1;
             return result;
         }
         // delete word in known

@@ -11,13 +11,14 @@
         <Label Name="UsernameLabel" Content="Username" HorizontalAlignment="Right" Margin="0,19,258,0" VerticalAlignment="Top" FontSize="40" Foreground="White"/>
         <Button x:Name="Settings" Content="Settings" HorizontalAlignment="Left" Margin="982,22,0,0" VerticalAlignment="Top" Width="180" Height="60" Click="Settings_Click" FontSize="24" Background="#51D046" Foreground="White"/>
         <Border Background="#FF616161" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="900" Margin="0,110,0,0"/>
-        <Label x:Name="CurrentWord" Content="Current word" FontSize="40" Margin="0,130,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label x:Name="CurrentTranslateWord" Content="Translate (appear)" FontSize="40" Margin="0,210,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.35"/>
+        <Label x:Name="CurrentWord" Content="Current word" FontSize="60" Margin="0,130,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label x:Name="CurrentTranslateWord" Content="Translate (appear)" FontSize="60" Margin="0,180,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.35"/>
         <Label x:Name="ExampleUsingThisWord" Content="Example of using this word (appear)" FontSize="40" Margin="0,290,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.35"/>
         <Button x:Name="Right" Content="I was right!" HorizontalAlignment="Left" Margin="600,383,0,0" VerticalAlignment="Top" Width="380" Height="140" FontSize="40" Background="#51D046" Foreground="White" Click="IKnow_Click"/>
-        <Button x:Name="NotRight" Content="I forgot :(" HorizontalAlignment="Left" Margin="220,383,0,0" VerticalAlignment="Top" Width="380" Height="140" FontSize="40" Background="#51D046" Foreground="White"/>
+        <Button x:Name="NotRight" Content="I forgot :(" HorizontalAlignment="Left" Margin="220,383,0,0" VerticalAlignment="Top" Width="380" Height="140" FontSize="40" Background="#51D046" Foreground="White" Click="NotRight_Click"/>
         <Button x:Name="ShowTranslate" Content="Show translate" HorizontalAlignment="Center" Margin="0,383,0,0" VerticalAlignment="Top" Width="684" Height="140" FontSize="40" Background="#51D046" Foreground="White" Click="ShowTranslate_Click"/>
         <Label x:Name="MotivationPhrase" Content="Kinda strange word... do you know it?" FontSize="40" Margin="0,550,300,0" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.35" Width="856"/>
         <Button x:Name="AddNewWordLearning" Content="Add a new word" HorizontalAlignment="Left" Margin="922,550,0,0" VerticalAlignment="Top" Width="240" Height="60" Click="AddNewWordLearning_Click" FontSize="24" Background="#51D046" Foreground="White"/>
+        <Button x:Name="DeleteWordButton" Content="Delete" Margin="1040,323,0,0" VerticalAlignment="Top" Width="109" Height="60" FontSize="24" Background="#51D046" Foreground="White" Click="DeleteWordButton_Click" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

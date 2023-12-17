@@ -54,18 +54,26 @@ namespace Cheremushkinae_107d2
 
         private void LearnngWindow_Click(object sender, RoutedEventArgs e)
         {
-            LearningWindow learningWindow = Owner as LearningWindow;
-            if (learningWindow != null)
+            if (GlobalSettings.SavedLearnWordsCount != 0)
             {
-                learningWindow.Show();
-                this.Hide();
-            }
+                LearningWindow learningWindow = Owner as LearningWindow;
+                if (learningWindow != null)
+                {
+                    learningWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    learningWindow = new LearningWindow();
+                    learningWindow.Owner = this;
+                    learningWindow.Show();
+                    this.Hide();
+                }
+            } 
             else
             {
-                learningWindow = new LearningWindow();
-                learningWindow.Owner = this;
-                learningWindow.Show();
-                this.Hide();
+                MessageBox.Show("You have no words in your dictionary. Add some to learn!");
+                AddNewWordWindow_Click(sender, e);
             }
         }
 
@@ -119,27 +127,41 @@ namespace Cheremushkinae_107d2
 
         private void DeleteAllDictionary_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult result = MessageBox.Show("Вы уверены?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            List<LearnDict> AllUserLearningWordsDict = DataWorker.GetAllUserLearningWords(GlobalSettings.SavedUserID);
+            if (result == MessageBoxResult.Yes)
+            {
+                for(int i  = 0; i < AllUserLearningWordsDict.Count; i++)
+                {
+                    string word_in_eng = AllUserLearningWordsDict[i].Word_in_English;
+                    DataWorker.DeleteLearningWordInDB(word_in_eng);
+            }
+                MessageBox.Show("dictionary deleted successfuly");
+            }
         }
 
         private void DeleteAccount_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(DataWorker.DeleteUserInDB(GlobalSettings.SavedUsername));
-            MainWindow mainWindow = Owner as MainWindow;
-            if (mainWindow != null)
+            MessageBoxResult result = MessageBox.Show("Вы уверены?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
             {
-                mainWindow.SignInMain.Visibility = Visibility.Visible;
-                mainWindow.SignUpMain.Visibility = Visibility.Visible;
-                mainWindow.UsernameLabel.Visibility = Visibility.Collapsed;
-                mainWindow.Show();
-                this.Hide();
-            }
-            else
-            {
-                mainWindow = new MainWindow();
-                mainWindow.Owner = this;
-                mainWindow.Show();
-                this.Hide();
+                MessageBox.Show(DataWorker.DeleteUserInDB(GlobalSettings.SavedUsername));
+                MainWindow mainWindow = Owner as MainWindow;
+                if (mainWindow != null)
+                {
+                    mainWindow.SignInMain.Visibility = Visibility.Visible;
+                    mainWindow.SignUpMain.Visibility = Visibility.Visible;
+                    mainWindow.UsernameLabel.Visibility = Visibility.Collapsed;
+                    mainWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    mainWindow = new MainWindow();
+                    mainWindow.Owner = this;
+                    mainWindow.Show();
+                    this.Hide();
+                }
             }
         }
     }
