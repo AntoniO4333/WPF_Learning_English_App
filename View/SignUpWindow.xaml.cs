@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Cheremushkinae_107d2;
 
 namespace Cheremushkinae_107d2
 {
@@ -22,15 +23,27 @@ namespace Cheremushkinae_107d2
     /// </summary>
     public partial class SignUpWindow : Window
     {
-        public SignUpWindow()
+        private static SignUpWindow _instance;
+
+        private SignUpWindow()
         {
             InitializeComponent();
             DataContext = new DataManageVM();
             Closing += SignUpWindow_Closing;
-            this.WindowStartupLocation = WindowStartupLocation.CenterScreen; 
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
-        
+        public static SignUpWindow Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new SignUpWindow();
+                }
+                return _instance;
+            }
+        }
 
         private void GoToSignInWindow_Click(object sender, RoutedEventArgs e)
         {
@@ -89,4 +102,6 @@ namespace Cheremushkinae_107d2
             }
         }
     }
+
 }
+

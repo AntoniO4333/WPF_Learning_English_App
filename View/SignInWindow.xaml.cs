@@ -63,19 +63,8 @@ namespace Cheremushkinae_107d2
 
         private void GoToSignUpWindow_Click(object sender, RoutedEventArgs e)
         {
-            SignUpWindow signUpWindow = Owner as SignUpWindow;
-            if (signUpWindow != null)
-            {
-                signUpWindow.Show();
-                this.Hide();
-            }
-            else
-            {
-                signUpWindow = new SignUpWindow();
-                signUpWindow.Owner = this;
-                signUpWindow.Show();
-                this.Hide();
-            }
+            SignUpWindow.Instance.Show();
+            this.Hide();
         }
 
         private void SignInWindow_Closing(object sender, CancelEventArgs e)
