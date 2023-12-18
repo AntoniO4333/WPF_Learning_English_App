@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using MyGlobalVarAndSettings;
 
 namespace Cheremushkinae_107d2.Model
 {

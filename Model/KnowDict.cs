@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using MyGlobalVarAndSettings;
 
 namespace Cheremushkinae_107d2.Model
 {
-    public class KnowDict
+    public class KnowDict1
     {
         [Key]
         public int ID_known_word { get; set; }

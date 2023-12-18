@@ -5,10 +5,11 @@ using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using MyGlobalVarAndSettings;
 
 namespace Cheremushkinae_107d2.Model
 {
-    public class User
+    public class User1
     {
         [Key]
         public int ID_user { get; set; }

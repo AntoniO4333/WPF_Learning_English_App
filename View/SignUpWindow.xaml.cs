@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Cheremushkinae_107d2;
+using MyGlobalVarAndSettings;
 
 namespace Cheremushkinae_107d2
 {

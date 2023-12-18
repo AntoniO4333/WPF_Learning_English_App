@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using MyGlobalVarAndSettings;
 
 namespace Cheremushkinae_107d2.ViewModel
 {

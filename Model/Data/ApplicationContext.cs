@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyGlobalVarAndSettings;
 
 namespace Cheremushkinae_107d2.Model.Data
 {
